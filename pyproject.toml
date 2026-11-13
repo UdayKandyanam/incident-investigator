@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "incident-investigator"
+version = "0.1.0"
+description = "Read-only investigator for synthetic Kubernetes incidents, with runbook citations and human approval on every proposed action"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+agent = ["langgraph>=0.2", "langchain-core>=0.3"]
+
+[tool.setuptools]
+packages = ["incident_investigator"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
